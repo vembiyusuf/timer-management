@@ -10,14 +10,17 @@
     <div class="container">
         <h1>Manajemen Waktu</h1>
 
+        <!-- Form Tambah Tugas -->
         <div class="task-form">
             <input type="text" id="taskName" placeholder="Nama Tugas">
-            <input type="number" id="taskTime" placeholder="Durasi (menit)">
-            <button onclick="addTask()">Tambah Tugas</button>
+            <input type="number" id="taskTime" placeholder="Durasi (menit)" min="1">
+            <button id="addTaskBtn" onclick="addTask()">Tambah Tugas</button>
         </div>
 
-        <ul id="taskList"></ul>
+        <!-- Daftar Tugas -->
+        <ul id="taskList" class="task-list"></ul>
 
+        <!-- Timer -->
         <div id="timer" class="hidden">
             <h2 id="timerTaskName"></h2>
             <p id="timeRemaining">00:00</p>
@@ -25,6 +28,16 @@
         </div>
     </div>
 
+    <!-- Service Worker Notification -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js')
+                .then(reg => console.log("Service Worker terdaftar!", reg))
+                .catch(err => console.log("Service Worker gagal!", err));
+        }
+    </script>
+
     <script src="main.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

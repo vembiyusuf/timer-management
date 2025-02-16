@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manajemen Waktu</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Manajemen Waktu</h1>
+
+        <div class="task-form">
+            <input type="text" id="taskName" placeholder="Nama Tugas">
+            <input type="number" id="taskTime" placeholder="Durasi (menit)">
+            <button onclick="addTask()">Tambah Tugas</button>
+        </div>
+
+        <ul id="taskList"></ul>
+
+        <div id="timer" class="hidden">
+            <h2 id="timerTaskName"></h2>
+            <p id="timeRemaining">00:00</p>
+            <button onclick="stopTimer()">Berhenti</button>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
